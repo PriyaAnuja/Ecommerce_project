@@ -6,6 +6,8 @@ import com.ecommerce1.productservice1.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.*;
+
 //to tell spring as this is a controller(register this class as controller)
 //Springbean--> spring will create object(1) for this class
 @RestController
@@ -21,12 +23,17 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public @ResponseBody GetProductDto getProductbyId(@PathVariable("id") Long id){
+    public @ResponseBody GetProductDto getProductbyId(@PathVariable("id") Long id) throws Exception{
 //        ProductService ps=new ProductService();
 //        return ps.getProductById(id);
         //instead of above, i can create a constructor, whoever is creating the
         // productcontroller is creating the productservice
         return productService.getProductById(id);
+    }
+
+    @GetMapping("")
+    public @ResponseBody List<GetProductDto> getAllProducts(){
+        return productService.getAllProducts();
     }
 
     @PostMapping("")
