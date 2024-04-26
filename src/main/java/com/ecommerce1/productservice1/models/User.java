@@ -14,6 +14,9 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Entity
 //i am telling hibernate to add these data into tables in mysql
 //@Entity(name = "ecomm_user")
+
+//@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 //this is user obj in backend application
 public class User {
     @Id  //telling as id is primary key.
