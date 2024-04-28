@@ -18,6 +18,6 @@ public class Batch{
     private Integer strength;
 
     //creating extra column here to store instructor id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     private Instructor instructor;
 }
