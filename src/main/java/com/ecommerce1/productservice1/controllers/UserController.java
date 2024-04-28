@@ -1,6 +1,7 @@
 package com.ecommerce1.productservice1.controllers;
 
 import com.ecommerce1.productservice1.dtos.CreateUserDto;
+import com.ecommerce1.productservice1.dtos.GetInstructorDto;
 import com.ecommerce1.productservice1.models.Instructor;
 import com.ecommerce1.productservice1.models.User;
 import com.ecommerce1.productservice1.service.UserService;
@@ -33,7 +34,7 @@ public class UserController {
     }
 
     @GetMapping("/instructor/{name}")
-    public List<Instructor> getInstructorByName(@PathVariable(name = "name") String name){
+    public List<GetInstructorDto> getInstructorByName(@PathVariable(name = "name") String name){
         return userService.getInstructorByName(name);
     }
 }

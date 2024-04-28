@@ -1,10 +1,12 @@
 package com.ecommerce1.productservice1.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
 
 @Entity
 @Getter
@@ -16,6 +18,6 @@ public class Batch{
     private Integer strength;
 
     //creating extra column here to store instructor id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Instructor instructor;
 }
